@@ -111,7 +111,7 @@ function checkCollision(newHead) {
 }
 
 function checkWin() {
-  if (snake.length === 5) {
+  if (snake.length === rows * cols) {
     window.cancelAnimationFrame(animationFrameId);
     gameRunning = false;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
