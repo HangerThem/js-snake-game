@@ -1,0 +1,46 @@
+@font-face {
+  font-family: "PixelFont";
+  src: url("../fonts/pixelify.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000;
+}
+
+canvas {
+  display: block;
+  margin: 0 auto;
+  background-image: linear-gradient(
+    to bottom,
+    #000 0,
+    #000 2px,
+    #000e00 2px,
+    #000e00 4px
+  );
+  background-repeat: repeat;
+  background-size: 100% 4px;
+  /* make the background shake up and down */
+  animation: shake 0.1s linear infinite;
+}
+
+@keyframes shake {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 0 2px;
+  }
+  100% {
+    background-position: 0 0px;
+  }
+}
