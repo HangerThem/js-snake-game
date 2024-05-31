@@ -75,7 +75,8 @@ function moveSnake() {
   head.y += currentDirection.y;
 
   if (checkCollision(head)) {
-    const audio = new Audio("../sounds/impact.mp3");
+    const audio =
+      new Audio("../sounds/impact.mp3") || new Audio("./sounds/impact.mp3");
     audio.play();
     gameOver();
   } else {
@@ -83,7 +84,8 @@ function moveSnake() {
     if (head.x !== food.x || head.y !== food.y) {
       snake.pop();
     } else {
-      const audio = new Audio("../sounds/food.mp3");
+      const audio =
+        new Audio("../sounds/food.mp3") || new Audio("./sounds/food.mp3");
       audio.play();
       checkWin();
       generateFood();
