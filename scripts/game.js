@@ -75,8 +75,7 @@ function moveSnake() {
   head.y += currentDirection.y;
 
   if (checkCollision(head)) {
-    const audio =
-      new Audio("../sounds/impact.mp3") || new Audio("./sounds/impact.mp3");
+    const audio = new Audio("./sounds/impact.mp3");
     audio.play();
     gameOver();
   } else {
@@ -84,8 +83,7 @@ function moveSnake() {
     if (head.x !== food.x || head.y !== food.y) {
       snake.pop();
     } else {
-      const audio =
-        new Audio("../sounds/food.mp3") || new Audio("./sounds/food.mp3");
+      const audio = new Audio("./sounds/food.mp3");
       audio.play();
       checkWin();
       generateFood();
@@ -96,7 +94,7 @@ function moveSnake() {
 function checkCollision(newHead) {
   for (let i = 0; i < snake.length; i++) {
     if (snake[i].x === newHead.x && snake[i].y === newHead.y) {
-      return true; // Collided with self
+      return true;
     }
   }
 
@@ -139,8 +137,8 @@ function draw() {
 
 function drawSnake() {
   for (const { x, y } of snake) {
-    ctx.fillStyle = "#020";
-    ctx.shadowColor = "#020";
+    ctx.fillStyle = "#040";
+    ctx.shadowColor = "#040";
 
     ctx.fillRect(
       x * cellWidth + 2,
